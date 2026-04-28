@@ -12,12 +12,21 @@ const supabase = createClient(supabaseUrl || '', supabaseServiceRoleKey || '')
 async function validateToken(token: string) {
   const { data, error } = await supabase
     .from('reservations')
-    .select('ezee_reservation_id')
+    .select('ezee_reservation_id,checkout_date')
     .eq('unique_token', token)
     .single()
 
   if (error || !data) {
     throw new Error('Invalid or expired token')
+  }
+
+  // Check if token expired (24 hours after checkout_date)
+  if (data.checkout_date) {
+    const checkoutTime = new Date(data.checkout_date).getTime()
+    const expiryTime = checkoutTime + 24 * 60 * 60 * 1000
+    if (Date.now() > expiryTime) {
+      throw new Error('Token has expired')
+    }
   }
 
   return data

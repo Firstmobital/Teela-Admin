@@ -1,0 +1,16 @@
+{
+  "name": "Teela Guest App",
+  "short_name": "TeelaGuest",
+  "description": "Guest-facing progressive web app for check-in, services, and activities.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#0d5c63",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

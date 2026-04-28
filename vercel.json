@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "buildCommand": "cd teela-guest-app && npm run build",
+  "outputDirectory": "teela-guest-app/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -36,3 +36,5 @@ export const getStaffRole = (session) => {
 export const isAdmin = (session) => {
   return getStaffRole(session) === 'admin'
 }
+
+

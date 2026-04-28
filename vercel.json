@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "installCommand": "cd teela-guest-app && npm install",
   "buildCommand": "cd teela-guest-app && npm run build",
   "outputDirectory": "teela-guest-app/dist",
   "rewrites": [
